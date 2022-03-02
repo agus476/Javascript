@@ -134,6 +134,11 @@ function promotion(){
 
 }
 
+function Totalbuy (){
+
+    alert("El precio de su compra es de: $" + Totalbuy);
+
+}
 
 const askForSize = () => {
     let number = parseInt(prompt("Escriba un tamaño entre 1 y 3"));
@@ -180,7 +185,7 @@ function buyProducts(){
         }
     }
 
-    alert("El precio de su compra es de: $" + Totalbuy);
+    Totalbuy()
 }
 
 
