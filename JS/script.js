@@ -62,7 +62,7 @@ function sufficientStock() {
 
 let QuantityBuy;
 
-let Totalbuy = 0;
+
 
 function weight() {
 
@@ -87,39 +87,26 @@ function buy (stock, price, name) {
 
 
 function promotion(){
-    const promoCode = [455525 , 25553 , 52523];
+    const promoCode = [455525 , 25553 , 52523 , 255223 , 55522 , 42220] ;
     let CodePromotion = prompt ("Ingrese el codigo de descuento");
+    const descount = promoCode.some(el => el == CodePromotion);
+    const code = promoCode.filter(el => el == CodePromotion);
     for ( let i = 0; i < promoCode.length ; i ++ ){
 
 
-        if (CodePromotion == promoCode [0]) {
+        if (descount == true) {
  
             alert ("Genial, tenes un codigo de 15% de descuento en tu compra")
+
+            
+             alert ("Su codigo de descuento es el " + code)
          
             break;
            }
 
 
 
-           else if (CodePromotion == promoCode [1]) {
-
-
-            alert ("Genial,  tenes un codigo de 20% de descuento en tu compra")
-        
-            break;
-        
-          }
-
-
-          else if (CodePromotion == promoCode [2]) {
-
-
-            alert ("Buenisimo, vas a tener un 50% de descuento en tu proxima compra")
-        
-            break;
-        
-          }
-
+           
           else { 
 
             alert ("Codigo invalido")
@@ -134,11 +121,7 @@ function promotion(){
 
 }
 
-function Totalbuy (){
 
-    alert("El precio de su compra es de: $" + Totalbuy);
-
-}
 
 const askForSize = () => {
     let number = parseInt(prompt("Escriba un tamaño entre 1 y 3"));
@@ -185,7 +168,7 @@ function buyProducts(){
         }
     }
 
-    Totalbuy()
+    alert("El precio de su compra es de: $" + Totalbuy);
 }
 
 

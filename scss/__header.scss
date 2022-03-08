@@ -1,0 +1,32 @@
+@import "./_variables";
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 12rem;
+    width: 100%;
+    background-color: $base-color;
+
+    &__logo {
+
+        height: 9.5rem;
+        width: 10.5rem;
+        border-radius: 50%;
+        
+    }
+
+    &__nav{
+        height: 2rem;
+        width: 70vh;
+
+     }
+
+    &__list{
+        display: flex;
+        justify-content: space-around;
+        list-style:none;
+       }
+
+}
