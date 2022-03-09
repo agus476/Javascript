@@ -14,14 +14,14 @@ a {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 12rem;
+    height: 10rem;
     width: 100%;
     background-color: $base-color;
 
     &__logo {
 
         height: 9.5rem;
-        width: 10.5rem;
+        width: 9.5rem;
         border-radius: 50%;
         
     }
@@ -42,7 +42,7 @@ a {
    &__item{
     
     font-size: 1rem;
-	color: whitesmoke;
+	color: $secondary-color;
 	position: relative;
     display: inline-block;
     border: 0.3rem solid;
@@ -50,7 +50,17 @@ a {
     border-left: none;
     border-right: none;
     border-bottom: none;
+}
 
-   }
+&__item:hover{
+    border-bottom: 0.3rem solid $secondary-color;
+
+    transition: all 0.5s ease-in-out;
+
+}
+
+
+
+
 }
 
