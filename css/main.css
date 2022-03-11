@@ -51,9 +51,9 @@ a {
     border-bottom: 0.3rem solid #66D7D1;
     transition: all 0.5s ease-in-out; }
 
-.heroEggs {
+.heroEggs, .heroProducts {
   width: 100%;
-  height: 35rem;
+  height: 20rem;
   display: inline-block;
   text-align: center;
   background: url("../assets/hero eggs.png") no-repeat fixed center;
@@ -64,3 +64,31 @@ a {
   background-size: cover;
   background-position-y: -50px;
   background-color: #66D7D1; }
+
+.heroProducts {
+  background: url("../assets/productoshero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -50px;
+  background-color: #66D7D1; }
+
+.eggClass {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15rem 15rem;
+  grid-template-rows: 15rem 15rem;
+  background-color: #EAF2E3;
+  justify-content: center;
+  grid-column-gap: 2rem;
+  grid-row-gap: 5rem;
+  padding: 4rem; }
+  .eggClass__Child {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 0.2rem outset #66D7D1;
+    font-family: 'HevelticaRoman';
+    overflow: hidden;
+    padding: 1rem; }

@@ -1,0 +1,44 @@
+@import "./_variables";
+
+.heroProducts{
+@extend .heroEggs;
+background: url("../assets/productoshero.jpg");
+    background-repeat: no-repeat;    
+    background-size: cover;
+    background-position-y: -50px ;
+    background-color: $secondary-color;
+}
+
+.eggClass{
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: 15rem 15rem;
+    background-color: $base-color;
+    justify-content: center;
+    grid-column-gap: 2rem;
+    grid-row-gap: 5rem;
+    padding: 4rem;
+
+
+
+ &__Child{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 0.2rem outset $secondary-color;
+    font-family: 'HevelticaRoman';    
+    overflow: hidden;
+    padding: 1rem;
+
+ }
+
+
+
+
+}
+
+
