@@ -1,5 +1,5 @@
 
-/* class egg {
+ class egg {
     constructor(name, price, stock) {
         this.name = name;
         this.price = price;
@@ -54,8 +54,8 @@ function insufficientstock(stock){
     alert ( "No tenemos stock suficiente de ese huevo, en este momento solo contamos con" + stock + "cajones")
 }
 
-function sufficientStock() {
-    stock -= QuantityBuy;
+function sufficientStock () {
+    egg.stock = QuantityBuy;
     
 }
 
@@ -68,9 +68,14 @@ function weight() {
 
     alert ( " Pesos de los maples \n Huevo grande: Mayor a 2.5kg  \n Huevo mediano: Entre 1.8kg a 2.4kg  \n Huevo chico: Entre 1.5kg a 1.8kg ")
 }
+
+
+let Totalbuy = 0
+
 function finalprice(price) {
     Totalbuy += QuantityBuy * price;
 }
+
 
 
 function buy (stock, price, name) {
@@ -159,7 +164,7 @@ function buyProducts(){
             buy( egg2.stock, egg2.price, egg2.name)
         }
 
-        else if (buyName == egg3.namename) {
+        else if (buyName == egg3.name) {
             buy( egg3.stock, egg3.price, egg3.name)}
 
             
@@ -175,7 +180,7 @@ function buyProducts(){
 
 
 menu()
-*/
+
 
 
 
