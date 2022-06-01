@@ -24,6 +24,7 @@
    
    .button button:hover {
      transform: scale(1.2);
+     background-color: black;
    }
 
    .overlay{
@@ -36,6 +37,13 @@
      display: flex;
      align-items: center;
      justify-content: center;
+     visibility: hidden;
+   }
+
+   .overlay.active { 
+    
+     visibility: visible;
+
    }
 
    .popup{
@@ -46,7 +54,9 @@
      padding: 20px;
      text-align: center;
      width: 600px;
-  
+     opacity: 0;
+     transition: .3s ease all;
+     scale: (0.7);
    }
 
    .popup .btn-cerrar-popup{
@@ -62,4 +72,12 @@
    
     color: #000;
 
+   }
+
+
+ 
+   .popup.active{
+
+    opacity: 1;
+     transform: scale(1);
    }

@@ -148,7 +148,8 @@ a {
   transition: all .4s ease-in-out; }
 
 .button button:hover {
-  transform: scale(1.2); }
+  transform: scale(1.2);
+  background-color: black; }
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.3);
@@ -159,7 +160,11 @@ a {
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  visibility: hidden; }
+
+.overlay.active {
+  visibility: visible; }
 
 .popup {
   background-color: #f8f8f8;
@@ -168,7 +173,10 @@ a {
   font-family: "Roboto";
   padding: 20px;
   text-align: center;
-  width: 600px; }
+  width: 600px;
+  opacity: 0;
+  transition: .3s ease all;
+  scale: 0.7; }
 
 .popup .btn-cerrar-popup {
   font-size: 16px;
@@ -180,3 +188,7 @@ a {
 
 .popup .btn-cerrar-popup :hover {
   color: #000; }
+
+.popup.active {
+  opacity: 1;
+  transform: scale(1); }

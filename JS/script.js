@@ -1,5 +1,5 @@
 
- class egg {
+/* class egg {
     constructor(name, price, stock) {
         this.name = name;
         this.price = price;
@@ -182,23 +182,23 @@ function buyProducts(){
 menu()
 
 
-
+*/
 
 
 
 
 function asignarClass() {
     let card = document.createElement("div");
-    card.innerHTML =  '<span> Huevos grandes  </span>'
+    card.innerHTML =  '<span>Huevos grandes</span>'
 
-document.body.appendChild(card);
+    document.body.appendChild(card);
 
     card.classList.add("newClass");
 
 
 }
 
-
+asignarClass()
 
 
 
