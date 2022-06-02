@@ -113,6 +113,10 @@ padding: 2rem;
 
 }
 
+
+
+
+
 .eggClass .size i {
 
    position: relative;
@@ -133,8 +137,8 @@ padding: 2rem;
     width: 18px;
     height: 25px;
     bottom: -3px;
+    
 }
-
 
 .size i:nth-child(3){
 
@@ -148,4 +152,11 @@ padding: 2rem;
    width: 15px;
    height: 20px;
    bottom: -8px;
+}
+
+.eggClass .size i.eggColor {
+
+
+background-color: #94c120;
+   
 }

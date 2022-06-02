@@ -188,17 +188,15 @@ menu()
 
 
 function asignarClass() {
-    let card = document.createElement("div");
-    card.innerHTML =  '<span>Huevos grandes</span>'
-
-    document.body.appendChild(card);
-
-    card.classList.add("newClass");
+    let active = document.getElementById("green");
+    let off = 
+    active.classList.add("colorDeMisHuevos");
 
 
 }
 
-asignarClass()
+
+
 
 
 
