@@ -1,53 +1,23 @@
 
-/* class egg {
-    constructor(name, price, stock) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-
-    }
-}
+const eggR1 = new eggRed ( 9,"Grande", 4500 , 50 , "Colorado" )
+const eggR2 = new eggRed ( 8,"Mediano", 4100 , 25, "Colorado" )
+const eggR3 = new eggRed ( 11,"Chico" , 3700 , 30 , "Colorado" )
+const eggR4 = new eggRed ( 35, "Bolita" , 3200 , 35, "Colorado" )
 
 
-const egg1 = new egg ("Grande", 4500 , 50 )
-const egg2 = new egg ("Mediano", 4100 , 25)
-const egg3 = new egg ("Chico" , 3700 , 30 )
+const eggW1 = new eggWhite ( 5,"Grande", 4450 , 50 , "Blanco" )
+const eggW2 = new eggWhite ( 18,"Mediano", 4050 , 25 , "Blanco")
+const eggW3 = new eggWhite ( 22,"Chico" , 3650 , 30 , "Blanco")
+const eggW4 = new eggWhite ( 45, "Bolita" , 3150 , 35 , "Blanco")
      
 
+const eggsRed = [ eggR1 , eggR2 ,eggR3 , eggR4 ]
+const eggsWhite = [ eggW1 , eggW2 ,eggW3 , eggW4 ]
+
+console.log( "Este es el nombre de " + eggsRed[0].color)
 
 
 
-function menu(){
-    let opcion = prompt("Menu: \n1 - Ver productos y precios \n2 - Visualizar peso por maple \n3 - Canjear codigo de descuento \nESC- Salir")
-
-    switch(opcion){
-        case "1":
-            prices();
-            buyProducts();
-            break;
-        case "2":
-            weight();
-            menu();
-            break;
-
-        case "3": 
-        promotion()
-        menu()
-        ;    
-        case "ESC":
-            alert ("Gracias por vistarnos")
-            break;
-        default:
-            alert("Opcion Incorrecta")
-            menu()
-            break;
-    }
-}
-
-
-function prices(){
-    alert ("Tamaños y precios: \n Huevo grande : $4500 \n Huevo mediano : $4100 \n Huevo chico : $3700" )
-}
 
 
 function insufficientstock(stock){
@@ -64,10 +34,7 @@ let QuantityBuy;
 
 
 
-function weight() {
-
-    alert ( " Pesos de los maples \n Huevo grande: Mayor a 2.5kg  \n Huevo mediano: Entre 1.8kg a 2.4kg  \n Huevo chico: Entre 1.5kg a 1.8kg ")
-}
+ 
 
 
 let Totalbuy = 0
@@ -127,37 +94,12 @@ function promotion(){
 }
 
 
-
-const askForSize = () => {
-    let number = parseInt(prompt("Escriba un tamaño entre 1 y 3"));
-    while (isNaN(number) || number <= 0 || number >= 4) {
-        number = parseInt(prompt("Por favor, escriba el tamaño entre 1 y 3 (incluídos)"));
-    }
-    return number;
-}
-
-function askForName () {
-nameegg= prompt("Ingrese el tamaño de huevo que desea comprar:")
-
-return nameegg
-    
-}
-
-
-
-
-
-
 function buyProducts(){
 
-    const sizeNumber = askForSize();
-
-    for (let i = 0; i < sizeNumber; i++) {
-
-        const buyName = askForName ();
+    const buyName = askForName ();
         
 
-        if (buyName == egg1.name) {
+        if (buyName == eggsRed[i].name || eggWhite[i].name ) {
             buy( egg1.stock , egg1.price , egg1.name)
         }
         else if (buyName == egg2.name) {
@@ -173,27 +115,20 @@ function buyProducts(){
         }
     }
 
-    alert("El precio de su compra es de: $" + Totalbuy);
-}
+    
 
 
 
 
-menu()
-
-
-*/
 
 
 
 
-function asignarClass() {
-    let active = document.getElementById("green");
-    let off = 
-    active.classList.add("colorDeMisHuevos");
 
 
-}
+
+
+
 
 
 
