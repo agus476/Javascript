@@ -8,6 +8,7 @@ let popup = document.getElementById ('popup')
 
 
 
+
 //Funciones
 
 const showProducts = () => {
@@ -21,7 +22,7 @@ contendorEgg.innerHTML += `
                 <div class="RedChild" id = "${egg.id}"> 
                         <div>${egg.name}</div>
                           <div class="size">
-                               <i></i>
+                               <i class="eggColor"></i>
                                <i></i>
                                <i></i>
                                <i></i>
@@ -70,9 +71,9 @@ const giveLocalStorage = (key) =>{
     let cart = [];
     if(localStorage.getItem(key)){
 
-        carrito = JSON.parse(localStorage.getItem(key))
+        cart = JSON.parse(localStorage.getItem(key))
     }
-    return carrito;
+    return cart;
 
 
 }
@@ -93,15 +94,60 @@ const giveProduct =(id) => {
 
 const putProductInChart = (id) => {
 const product = giveProduct(id);
-popup.innerHTML += ` <div>${product.name}</div>`
+cartText.innerText = "MI CARRITO DE COMPRAS"    
+let addProduct = document.createElement("div")
+
+addProduct.innerHTML=`<div>
+          
+            </div>
+            <div class="debug" >
+                ${product.name}
+            </div>
+            `;
+addProduct.classList.add("cart-seccion")
+
+popup.appendChild(addProduct)
+
 
 
 
 }
 
 
-showProducts()
 
+
+
+
+//Eventos y logica
+
+
+
+
+contendorEgg.addEventListener ('click', e => {
+
+if (e.target.classList.contains('btn-addCart')) {
+
+    const id = e.target.parentNode.id;
+    putProductInChart(id)
+    const cart = giveLocalStorage('Carrito')
+    const egg = giveProduct (e.target.id)
+    cart.push(egg)
+    saveInLocalStorage("Carrito", cart)
+
+
+}
+
+
+
+
+})
+
+
+
+
+
+
+showProducts()
 
 
 

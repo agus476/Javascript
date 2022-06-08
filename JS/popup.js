@@ -1,6 +1,6 @@
 
-let btnOpen = document.getElementById ('btn-open')
-let btnClose = document.getElementById ('btn-close')
+const btnOpen = document.getElementById ('btn-open')
+const btnClose = document.getElementById ('btn-close')
 
 btnOpen.addEventListener('click' , function(){
   
@@ -12,8 +12,8 @@ btnOpen.addEventListener('click' , function(){
 
 btnClose.addEventListener('click' , function(){
   
+    
     overlay.classList.remove('active')
     popup.classList.remove('active')
-
 
 })
