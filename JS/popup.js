@@ -1,7 +1,5 @@
 
 let btnOpen = document.getElementById ('btn-open')
-let overlay = document.getElementById ('overlay')
-let popup = document.getElementById ('popup')
 let btnClose = document.getElementById ('btn-close')
 
 btnOpen.addEventListener('click' , function(){

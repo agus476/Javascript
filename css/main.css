@@ -86,21 +86,15 @@ a {
 .eggClass {
   width: 100%;
   height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
-  .eggClass .eggClass__Red {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 15rem 15rem;
-    grid-template-rows: 15rem 15rem;
-    background-color: #EAF2E3;
-    justify-content: center;
-    grid-column-gap: 2rem;
-    grid-row-gap: 5rem;
-    padding: 4rem; }
-  .eggClass__RedChild {
+  display: grid;
+  grid-template-columns: 15rem 15rem 15rem 15rem;
+  grid-template-rows: 15rem 15rem;
+  background-color: #EAF2E3;
+  justify-content: center;
+  grid-column-gap: 2rem;
+  grid-row-gap: 5rem;
+  padding: 4rem; }
+  .eggClass .RedChild {
     background-color: red;
     display: flex;
     flex-direction: column;
@@ -111,20 +105,11 @@ a {
     font-family: 'HevelticaRoman';
     overflow: hidden;
     padding: 1rem; }
-  .eggClass .eggClass__white {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 15rem 15rem;
-    grid-template-rows: 15rem 15rem;
-    background-color: #EAF2E3;
-    justify-content: center;
-    grid-column-gap: 2rem;
-    grid-row-gap: 5rem;
-    padding: 4rem; }
-  .eggClass__whiteChild {
+  .eggClass .whiteChild {
     background-color: blue;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     border-radius: 20px;
     border: 0.2rem outset #66D7D1;
@@ -169,6 +154,31 @@ a {
 .btn-addCart {
   width: 100px;
   height: 50px; }
+
+.btn-addCart {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none; }
+
+.btn-1 {
+  background: #060e83;
+  background: linear-gradient(0deg, #060e83 0%, #0c19b4 100%);
+  border: none; }
+
+.btn-1:hover {
+  background: #0003ff;
+  background: linear-gradient(0deg, #0003ff 0%, #027efb 100%); }
 
 .button {
   display: flex;
@@ -237,3 +247,6 @@ a {
   width: 100%;
   height: 100px;
   background-color: salmon; }
+
+.debug {
+  background-color: green; }

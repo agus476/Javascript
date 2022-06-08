@@ -1,122 +1,106 @@
 
-const eggR1 = new eggRed ( 9,"Grande", 4500 , 50 , "Colorado" )
-const eggR2 = new eggRed ( 8,"Mediano", 4100 , 25, "Colorado" )
-const eggR3 = new eggRed ( 11,"Chico" , 3700 , 30 , "Colorado" )
-const eggR4 = new eggRed ( 35, "Bolita" , 3200 , 35, "Colorado" )
 
-
-const eggW1 = new eggWhite ( 5,"Grande", 4450 , 50 , "Blanco" )
-const eggW2 = new eggWhite ( 18,"Mediano", 4050 , 25 , "Blanco")
-const eggW3 = new eggWhite ( 22,"Chico" , 3650 , 30 , "Blanco")
-const eggW4 = new eggWhite ( 45, "Bolita" , 3150 , 35 , "Blanco")
-     
-
-const eggsRed = [ eggR1 , eggR2 ,eggR3 , eggR4 ]
-const eggsWhite = [ eggW1 , eggW2 ,eggW3 , eggW4 ]
-
-console.log( "Este es el nombre de " + eggsRed[0].color)
+//Variables globales
+let contendorEgg = document.querySelector('.eggClass')
+let overlay = document.getElementById ('overlay')
+let popup = document.getElementById ('popup')
 
 
 
 
+//Funciones
 
-function insufficientstock(stock){
-    alert ( "No tenemos stock suficiente de ese huevo, en este momento solo contamos con" + stock + "cajones")
-}
-
-function sufficientStock () {
-    egg.stock = QuantityBuy;
-    
-}
+const showProducts = () => {
+contendorEgg.innerHTML =''
+eggs.forEach(egg => {
 
 
-let QuantityBuy;
+if (egg.color == "Colorado") {
 
+contendorEgg.innerHTML += `
+                <div class="RedChild" id = "${egg.id}"> 
+                        <div>${egg.name}</div>
+                          <div class="size">
+                               <i></i>
+                               <i></i>
+                               <i></i>
+                               <i></i>
+                               </div>
+               <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
 
+                                 </div>
+</div>`
 
- 
-
-
-let Totalbuy = 0
-
-function finalprice(price) {
-    Totalbuy += QuantityBuy * price;
 }
 
 
+else if (egg.color == "Blanco"){
 
-function buy (stock, price, name) {
-    QuantityBuy = parseInt(prompt("Ingrese la cantidad de cajones que quiere comprar:"));
-    if(QuantityBuy <= stock) {
-    sufficientStock(stock, name);
-    finalprice(price)
+   
+    contendorEgg.innerHTML += `                     
+                        <div class="whiteChild" id = "${egg.id}">
+
+                                  <div>${egg.name}</div>
+                                  <div class="size">
+                                      <i></i>
+                                      <i></i>
+                                      <i></i>
+                                      <i></i>
+                                      </div>
+                      <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
+       
+                                        </div>
+                                        </div>
+    `
+
+
+
+
+}
+
+
+
+
+} ) 
+}
+
+
+const giveLocalStorage = (key) =>{
+
+    let cart = [];
+    if(localStorage.getItem(key)){
+
+        carrito = JSON.parse(localStorage.getItem(key))
     }
-    else {
-        insufficientstock(stock)
-    }
+    return carrito;
+
+
 }
 
 
+const saveInLocalStorage = (key,value)=>{
 
-function promotion(){
-    const promoCode = [455525 , 25553 , 52523 , 255223 , 55522 , 42220] ;
-    let CodePromotion = prompt ("Ingrese el codigo de descuento");
-    const descount = promoCode.some(el => el == CodePromotion);
-    const code = promoCode.filter(el => el == CodePromotion);
-    for ( let i = 0; i < promoCode.length ; i ++ ){
+localStorage.setItem(key, JSON.stringify(value))
 
 
-        if (descount == true) {
- 
-            alert ("Genial, tenes un codigo de 15% de descuento en tu compra")
-
-            
-             alert ("Su codigo de descuento es el " + code)
-         
-            break;
-           }
+}
 
 
+const giveProduct =(id) => {
 
-           
-          else { 
+    return eggs.find(egg => egg.id == id)
+}
 
-            alert ("Codigo invalido")
-        
-            break
-          }
-
-
-    }
+const putProductInChart = (id) => {
+const product = giveProduct(id);
+popup.innerHTML += ` <div>${product.name}</div>`
 
 
 
 }
 
 
-function buyProducts(){
-
-    const buyName = askForName ();
-        
-
-        if (buyName == eggsRed[i].name || eggWhite[i].name ) {
-            buy( egg1.stock , egg1.price , egg1.name)
-        }
-        else if (buyName == egg2.name) {
-            buy( egg2.stock, egg2.price, egg2.name)
-        }
-
-        else if (buyName == egg3.name) {
-            buy( egg3.stock, egg3.price, egg3.name)}
-
-            
-        else {
-            alert('No tenemos ese producto')
-        }
-    }
-
-    
-
+showProducts()
 
 
 
