@@ -129,8 +129,8 @@ if (e.target.classList.contains('btn-addCart')) {
 
     const id = e.target.parentNode.id;
     putProductInChart(id)
-    const cart = giveLocalStorage('Carrito')
-    const egg = giveProduct (e.target.id)
+    const cart = giveLocalStorage("Carrito")
+    const egg = giveProduct (id)
     cart.push(egg)
     saveInLocalStorage("Carrito", cart)
 
