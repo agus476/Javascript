@@ -1,5 +1,5 @@
 
-const btnOpen = document.getElementById ('btn-open')
+/* const btnOpen = document.getElementById ('btn-open')
 const btnClose = document.getElementById ('btn-close')
 
 btnOpen.addEventListener('click' , function(){
@@ -13,6 +13,24 @@ btnOpen.addEventListener('click' , function(){
 btnClose.addEventListener('click' , function(){
   
     
+    overlay.classList.remove('active')
+    popup.classList.remove('active')
+
+})
+*/
+
+
+$("#btn-open").click(function(){
+
+    overlay.classList.add('active')
+    popup.classList.add('active')
+
+
+})
+
+
+$('#btn-close').click(function(){
+
     overlay.classList.remove('active')
     popup.classList.remove('active')
 

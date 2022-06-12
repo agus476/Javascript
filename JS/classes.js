@@ -1,29 +1,130 @@
+class Helper {
 
-
- class egg {
-    constructor(id, name, price, stock , color) {
-        this.id = id
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
-        this.color = color
-        
+    static giveLocalStorage(key) { 
+     return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
     }
+
+    static saveInLocalStorage = (key,value)=>{
+           localStorage.setItem(key, JSON.stringify(value))
+        }
+
+    
+     static giveProduct =(id) => {
+          return eggs.find(egg => egg.id == id)
+    }
+
+
+    }
+
+
+class Chart {
+     constructor(eggs =  []) {
+         this.eggs = eggs;
+        }
+
+    getEgg () {
+     return this.eggs;
+    }
+
+    addEgg (eggs){
+
+        this.eggs.push(eggs);
 }
 
+      
+     deleteEgg (id){
+      this.eggs = this.eggs.filter(egg => egg.id != id )  
 
-const eggR1 = new egg ( 5,"Grande", 4500 , 50 , "Colorado" )
-const eggR2 = new egg ( 6,"Mediano", 4100 , 25, "Colorado" )
-const eggR3 = new egg ( 7,"Chico" , 3700 , 30 , "Colorado" )
-const eggR4 = new egg ( 8, "Bolita" , 3200 , 35, "Colorado" )
 
-const eggW1 = new egg (  9,"Grande", 4450 , 50 , "Blanco" )
-const eggW2 = new egg ( 10,"Mediano", 4050 , 25 , "Blanco")
-const eggW3 = new egg ( 11,"Chico" , 3650 , 30 , "Blanco")
-const eggW4 = new egg ( 12, "Bolita" , 3150 , 35 , "Blanco")
-     
+     }
+    
 
-const eggs = [ eggR1 , eggR2 ,eggR3 , eggR4 ,  eggW1 , eggW2 ,eggW3 , eggW4 ]
-const cartBuy = []
 
-console.log( "Este es el nombre de " + eggs[5].color)
+
+
+}
+
+class Interfaces{
+ 
+ 
+    static showProducts = () => {
+        contendorEgg.innerHTML =''
+        eggs.forEach(egg => {
+        
+        
+        if (egg.color == "Colorado") {
+        
+        contendorEgg.innerHTML += `
+                        <div class="RedChild" id = "${egg.id}"> 
+                                <div>${egg.name}</div>
+                                  <div class="size">
+                                       <i class="eggColor"></i>
+                                       <i></i>
+                                       <i></i>
+                                       <i></i>
+                                       </div>
+                       <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
+        
+                                         </div>
+        </div>`
+        
+        }
+        
+        
+        else if (egg.color == "Blanco"){
+        
+           
+            contendorEgg.innerHTML += `                     
+                                <div class="whiteChild" id = "${egg.id}">
+        
+                                          <div>${egg.name}</div>
+                                          <div class="size">
+                                              <i></i>
+                                              <i></i>
+                                              <i></i>
+                                              <i></i>
+                                              </div>
+                              <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
+               
+                                                </div>
+                                                </div>
+            `
+        
+        
+        
+        
+        }
+        
+        
+        
+        
+        } ) 
+        }
+
+     static putProductInChart = (id) => {
+            const product = giveProduct(id);
+            cartText.innerText = "MI CARRITO DE COMPRAS"    
+            let addProduct = document.createElement("div")
+            
+            addProduct.innerHTML=`<div>
+                      
+                        </div>
+                        <div class="debug" >
+                            ${product.name}
+                        </div>
+                        `;
+            addProduct.classList.add("cart-seccion")
+            
+            popup.appendChild(addProduct)
+            
+            
+            
+            
+            }
+            
+        
+
+
+}
+
+Interfaces.showProducts()
