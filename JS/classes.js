@@ -1,7 +1,7 @@
 class Helper {
 
     static giveLocalStorage(key) { 
-     return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
+      return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
     }
 
     static saveInLocalStorage = (key,value)=>{
@@ -9,7 +9,7 @@ class Helper {
         }
 
     
-     static giveProduct =(id) => {
+     static giveProduct(id){
           return eggs.find(egg => egg.id == id)
     }
 
@@ -26,9 +26,12 @@ class Chart {
      return this.eggs;
     }
 
-    addEgg (eggs){
-
-        this.eggs.push(eggs);
+    addEgg(egg){
+         
+         const inChart = this.eggs.find(egg => egg.id ===egg.id)
+         console.log(inChart)
+        
+        this.eggs.push(egg);
 }
 
       
@@ -47,13 +50,15 @@ class Chart {
 class Interfaces{
  
  
-    static showProducts = () => {
+    static showProducts(){
+
+        let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML =''
         eggs.forEach(egg => {
         
         
         if (egg.color == "Colorado") {
-        
+       let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML += `
                         <div class="RedChild" id = "${egg.id}"> 
                                 <div>${egg.name}</div>
@@ -101,8 +106,8 @@ class Interfaces{
         } ) 
         }
 
-     static putProductInChart = (id) => {
-            const product = giveProduct(id);
+     static putProductInChart(id){
+            const product = Helper.giveProduct(id);
             cartText.innerText = "MI CARRITO DE COMPRAS"    
             let addProduct = document.createElement("div")
             

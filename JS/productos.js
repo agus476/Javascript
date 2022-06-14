@@ -24,11 +24,12 @@ contendorEgg.addEventListener ('click', e => {
 if (e.target.classList.contains('btn-addCart')) {
 
     const id = e.target.parentNode.id;
-    putProductInChart(id)
-    const cart = giveLocalStorage("Carrito")
-    const egg = giveProduct (id)
-    cart.push(egg)
-    saveInLocalStorage("Carrito", cart)
+    Interfaces.putProductInChart(id)
+    const cart = new Chart(Helper.giveLocalStorage('Carrito'))
+    const egg = Helper.giveProduct(id)
+    cart.addEgg(egg)
+    Helper.saveInLocalStorage("Carrito", cart)
+    Helper.saveInLocalStorage("Carrito", cart.getEgg)
 
 
 }
@@ -39,11 +40,7 @@ if (e.target.classList.contains('btn-addCart')) {
 })
 
 
-
-
-
-
-showProducts()
+Interfaces.showProducts();
 
 
 
