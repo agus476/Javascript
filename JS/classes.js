@@ -17,7 +17,7 @@ class Helper {
     }
 
 
-class Chart {
+class Cart {
      constructor(eggs =  []) {
          this.eggs = eggs;
         }

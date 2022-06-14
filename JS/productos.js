@@ -25,7 +25,7 @@ if (e.target.classList.contains('btn-addCart')) {
 
     const id = e.target.parentNode.id;
     Interfaces.putProductInChart(id)
-    const cart = new Chart(Helper.giveLocalStorage('Carrito'))
+    const cart = new Cart(Helper.giveLocalStorage('Carrito'))
     const egg = Helper.giveProduct(id)
     cart.addEgg(egg)
     Helper.saveInLocalStorage("Carrito", cart)
