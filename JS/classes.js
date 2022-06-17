@@ -1,7 +1,7 @@
 class Helper {
 
     static giveLocalStorage(key) { 
-      return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
+        return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
     }
 
     static saveInLocalStorage = (key,value)=>{
@@ -28,10 +28,7 @@ class Cart {
 
     addEgg(egg){
          
-         const inChart = this.eggs.find(egg => egg.id ===egg.id)
-         console.log(inChart)
-        
-        this.eggs.push(egg);
+         this.eggs.push(egg);
 }
 
       
@@ -54,26 +51,54 @@ class Interfaces{
 
         let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML =''
+        let counter = 0
         eggs.forEach(egg => {
         
         
         if (egg.color == "Colorado") {
+            counter+= 1
+
        let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML += `
                         <div class="RedChild" id = "${egg.id}"> 
                                 <div>${egg.name}</div>
                                   <div class="size">
-                                       <i class="eggColor"></i>
-                                       <i></i>
-                                       <i></i>
-                                       <i></i>
+                                       <i id ="${counter+11}"></i>
+                                       <i id ="${counter+13}"></i>
+                                       <i id ="${counter+22}"></i>
+                                       <i id ="${counter+17}"></i>
                                        </div>
                        <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
         
                                          </div>
-        </div>`
+                             </div>`
+        
+           if (egg.id == 101){let eggPaint = document.getElementById('12')
+            eggPaint.classList.add("eggColor")}
+
+           else if (egg.id == 102) { let eggPaint = document.getElementById('15')
+            eggPaint.classList.add("eggColor")}
+
+           else if (egg.id == 103) {let eggPaint = document.getElementById('25')
+            eggPaint.classList.add("eggColor")
+           }
+
+           else if (egg.id == 104) { let eggPaint = document.getElementById('21')
+           eggPaint.classList.add("eggColor")}
         
         }
+
+          
+
+            
+
+
+         
+        
+
+          
+
+
         
         
         else if (egg.color == "Blanco"){

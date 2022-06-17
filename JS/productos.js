@@ -28,9 +28,10 @@ if (e.target.classList.contains('btn-addCart')) {
     const cart = new Cart(Helper.giveLocalStorage('Carrito'))
     const egg = Helper.giveProduct(id)
     cart.addEgg(egg)
-    Helper.saveInLocalStorage("Carrito", cart)
-    Helper.saveInLocalStorage("Carrito", cart.getEgg)
+    Helper.saveInLocalStorage("Carrito", cart.getEgg())
+   
 
+   
 
 }
 
