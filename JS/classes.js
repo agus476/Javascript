@@ -9,9 +9,19 @@ class Helper {
         }
 
     
-     static giveProduct(id){
-          return eggs.find(egg => egg.id == id)
+     static async giveProduct(idProduct){
+          const EggsDB = await Helper.giveProducts();
+          const id = parseInt(idProduct)
+          return EggsDB.find(egg => egg.id == id)
     }
+
+    static async  giveProducts() {
+        const response = await fetch('../data.json');
+        const json = await response.json();
+        return json;
+    }
+
+    
 
 
     }
@@ -47,12 +57,13 @@ class Cart {
 class Interfaces{
  
  
-    static showProducts(){
+    static async showProducts(){
 
         let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML =''
+        const EggsDB = await Helper.giveProducts()
         let counter = 0
-        eggs.forEach(egg => {
+        EggsDB.forEach(egg => {
         
         
         if (egg.color == "Colorado") {
@@ -61,13 +72,14 @@ class Interfaces{
        let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML += `
                         <div class="RedChild" id = "${egg.id}"> 
-                                <div>${egg.name}</div>
+                                
                                   <div class="size">
                                        <i id ="${counter+11}"></i>
                                        <i id ="${counter+13}"></i>
                                        <i id ="${counter+22}"></i>
                                        <i id ="${counter+17}"></i>
                                        </div>
+                                       <div>${egg.name}</div>
                        <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
         
                                          </div>
@@ -131,8 +143,9 @@ class Interfaces{
         } ) 
         }
 
-     static putProductInChart(id){
-            const product = Helper.giveProduct(id);
+     static async putProductInChart(id){
+         const EggsDB = await Helper.giveProducts();
+         const product = EggsDB.find(product => product.id == id);
             cartText.innerText = "MI CARRITO DE COMPRAS"    
             let addProduct = document.createElement("div")
             
@@ -157,4 +170,3 @@ class Interfaces{
 
 }
 
-Interfaces.showProducts()

@@ -19,14 +19,14 @@ let popup = document.getElementById ('popup')
 
 
 
-contendorEgg.addEventListener ('click', e => {
+contendorEgg.addEventListener ('click', async (e) => {
 
 if (e.target.classList.contains('btn-addCart')) {
 
     const id = e.target.parentNode.id;
     Interfaces.putProductInChart(id)
     const cart = new Cart(Helper.giveLocalStorage('Carrito'))
-    const egg = Helper.giveProduct(id)
+    const egg = await Helper.giveProduct(id)
     cart.addEgg(egg)
     Helper.saveInLocalStorage("Carrito", cart.getEgg())
    
