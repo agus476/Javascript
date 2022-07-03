@@ -3,7 +3,7 @@ $("#btn-open").click(function(){
 
     overlay.classList.add('active')
     popup.classList.add('active')
-
+    Interfaces.putProductInChart();
 
 })
 

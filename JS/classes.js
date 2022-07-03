@@ -21,10 +21,33 @@ class Helper {
         return json;
     }
 
-    
+
+    static paintEggs(eggname){
+
+        if (eggname == "Huevos grande"){let eggPaint = document.getElementById('12')
+        eggPaint.classList.add("eggColor")}
+
+       else if (eggname == "Huevos mediano") { let eggPaint = document.getElementById('15')
+        eggPaint.classList.add("eggColor")}
+
+       else if (eggname == "Huevos chico") {let eggPaint = document.getElementById('25')
+        eggPaint.classList.add("eggColor")
+       }
+
+       else if (eggname == "Huevos bolita") { let eggPaint = document.getElementById('21')
+       eggPaint.classList.add("eggColor")}
+
+
+
 
 
     }
+
+
+
+
+
+   }
 
 
 class Cart {
@@ -36,20 +59,73 @@ class Cart {
      return this.eggs;
     }
 
+
+    serachEgg(id){
+     
+     return this.eggs.find(item => item.egg.id == id)
+
+
+    }
+
     addEgg(egg){
+         const prod = this.serachEgg(egg.id)
+
+         if (prod){
+             prod.quantity++;    
+       
+         }
+         else{
+            this.eggs.push({quantity:1, egg : egg });
          
-         this.eggs.push(egg);
-}
+             
+         }
+           
+         
+          
+         }
+
+         
 
       
      deleteEgg (id){
-      this.eggs = this.eggs.filter(egg => egg.id != id )  
-
-
+      this.eggs = this.eggs.filter(item => item.egg.id != id ) ; 
      }
-    
 
 
+     increaseEgg(id){
+      
+        const prod = this.serachEgg(id);
+        prod.quantity++;
+    }
+
+    decreasedEgg(id){
+    const prod = this.serachEgg(id);
+    if(prod.quantity > 1){
+     
+     prod.quantity--;
+}
+    else{
+
+        this.deleteEgg(id)
+    }
+
+    }
+
+
+}
+
+
+class Counter{
+       constructor(value){
+        this.value = value}
+
+    getValue(){ 
+    return this.value}
+
+    refreshValue(value){
+
+        this.value += value
+    }
 
 
 }
@@ -63,102 +139,107 @@ class Interfaces{
         contendorEgg.innerHTML =''
         const EggsDB = await Helper.giveProducts()
         let counter = 0
+        let badge = "$"
         EggsDB.forEach(egg => {
-        
-        
-        if (egg.color == "Colorado") {
-            counter+= 1
-
-       let contendorEgg = document.querySelector('.eggClass')
+        counter+= 1
+        let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML += `
-                        <div class="RedChild" id = "${egg.id}"> 
+                        <div class="EggChild" id = "${egg.id}"> 
+                              <div class="product">${egg.name} ${egg.color}</div>
+                              <img src="${egg.imagen}" alt="" class="img">
                                 
                                   <div class="size">
-                                       <i id ="${counter+11}"></i>
-                                       <i id ="${counter+13}"></i>
-                                       <i id ="${counter+22}"></i>
-                                       <i id ="${counter+17}"></i>
+                                       <i id ="${counter+8}"></i>
+                                       <i id ="${counter+16}"></i>
+                                       <i id ="${counter+24}"></i>
+                                       <i id ="${counter+32}"></i>
                                        </div>
-                                       <div>${egg.name}</div>
+
+                                       <div class="description" >${egg.description}</div>
+                                       <div class="price">${badge}${egg.price}</div>
+                                       
+
+
+                                       
                        <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
         
                                          </div>
                              </div>`
         
-           if (egg.id == 101){let eggPaint = document.getElementById('12')
-            eggPaint.classList.add("eggColor")}
-
-           else if (egg.id == 102) { let eggPaint = document.getElementById('15')
-            eggPaint.classList.add("eggColor")}
-
-           else if (egg.id == 103) {let eggPaint = document.getElementById('25')
-            eggPaint.classList.add("eggColor")
-           }
-
-           else if (egg.id == 104) { let eggPaint = document.getElementById('21')
-           eggPaint.classList.add("eggColor")}
-        
-        }
-
           
-
-            
-
-
-         
-        
-
-          
+           //Helper.paintEggs(egg.name)
 
 
-        
-        
-        else if (egg.color == "Blanco"){
-        
            
-            contendorEgg.innerHTML += `                     
-                                <div class="whiteChild" id = "${egg.id}">
-        
-                                          <div>${egg.name}</div>
-                                          <div class="size">
-                                              <i></i>
-                                              <i></i>
-                                              <i></i>
-                                              <i></i>
-                                              </div>
-                              <button class= "btn-addCart btn-1" id="buy" >AGREGAR</button>
-               
-                                                </div>
-                                                </div>
-            `
-        
-        
-        
-        
-        }
-        
-        
         
         
         } ) 
         }
 
-     static async putProductInChart(id){
-         const EggsDB = await Helper.giveProducts();
-         const product = EggsDB.find(product => product.id == id);
-            cartText.innerText = "MI CARRITO DE COMPRAS"    
+
+        static refreshTotal(container, value) {
+            const div = document.createElement('div');
+            div.classList.add('buyFoot');
+            const total = document.createElement('span');
+            total.textContent = 'Total:  $' + value;
+            total.classList.add('name')
+            const finalButtom = document.createElement('button')
+            finalButtom.classList.add('btn-addCart')
+            finalButtom.classList.add('btn-1')
+            finalButtom.textContent = "FINALIZAR COMPRA"
+            div.appendChild(total);
+            div.appendChild(finalButtom)
+            container.appendChild(div);
+        }
+
+
+      
+
+     static  putProductInChart(){
+        const cart = Helper.giveLocalStorage('Carrito');
+        let sectionCart = document.getElementById('sectionCart')
+        
+         if (cart.length == 0){
+
+            cartText.innerText = "EL CARRITO ESTA VACIO"
+            sectionCart.innerHTML = ''
+         }
+
+         else{
+            const total = new Counter(0);
+           sectionCart.innerHTML = ''
+           cartText.innerText = "MI CARRITO DE COMPRAS"
+            cart.forEach((item) => {
             let addProduct = document.createElement("div")
-            
-            addProduct.innerHTML=`<div>
+            addProduct.innerHTML = ` 
+                 <div class= "line">
+            <img src="${item.egg.imagen}" alt="" class="imgInChart">
+              <div class="name">${item.egg.name}</div>
+              <div class="description">${item.egg.description}</div> 
+              <div class="price">$${item.egg.price * item.quantity} </div>
+              <div class="quant" id ="${item.egg.id}"> 
+                <button class=" cart-min fa fa-trash fa-lg" aria-hidden="true"></i></button>
+                <span> ${item.quantity} cajas</span>
+                <button class=" cart-max fa fa-plus fa-lg" aria-hidden="true"></i></button>
+                </div>
+                </div>
                       
-                        </div>
-                        <div class="debug" >
-                            ${product.name}
-                        </div>
-                        `;
-            addProduct.classList.add("cart-seccion")
+
+                    
+                 
+                  `;
+                  total.refreshValue(item.egg.price*item.quantity)
+                  addProduct.classList.add('egg-Add');
+                  sectionCart.appendChild(addProduct);
+            })
             
-            popup.appendChild(addProduct)
+            
+                
+                Interfaces.refreshTotal(sectionCart, total.getValue())
+ 
+         }
+            
+            
             
             
             

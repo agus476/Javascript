@@ -1,10 +1,16 @@
+@import "./_variables";
+
 @font-face{
-    font-family: 'Roboto';
-    src: url('../assets/Roboto-Regular.ttf') format("truetype");
+    font-family: 'BarlowSB';
+    src: url('../assets/Barlow-SemiBoldItalic.ttf') format("truetype");
     font-weight: normal;
     font-style: normal;
     font-family: 'IntoScript' ;
-    src: url('../assets/ClickerScript-Regular.ttf') format("truetype"); 
+    src: url('../assets/Barlow-Medium.ttf') format("truetype"); 
+    font-weight: normal;
+    font-style: normal;
+    font-family: 'Inter';
+    src: url('../assets/Inter-Light.ttf') format("truetype");
     font-weight: normal;
     font-style: normal;
 }

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../node_modules/alertifyjs/build/css/alertify.min.css"" />
+    <link rel="stylesheet" href="../node_modules/alertifyjs/build/css/themes/default.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../node_modules/alertifyjs/build/alertify.min.js" defer></script>
     <title>Nuestros productos </title>
 </head>
 <body>
@@ -47,16 +50,20 @@
         <section class="eggClass">
 
 
-
+        
         </section>
+
+        
+
+        </div>
 
         <div class="overlay" id="overlay">
           
           <div class="popup" id="popup">
            <a href="#" id="btn-close" class="btn-cerrar-popup"> <i class="fa fa-times" aria-hidden="true"></i></a>
 
-           <h3 id="cartText" >SU CARRO ESTA VACIO</h3> 
-           
+           <h3 id="cartText" ></h3> 
+           <div id="sectionCart" class="cart-seccion"></div>
            
 
            </div>
@@ -69,10 +76,11 @@
      </main>
         
 
-     <script src="../JS/data.js"></script>
+     
      <script src="../JS/classes.js"></script>
      <script src="../JS/productos.js"></script>
-     <script src = "../JS/popup.js"> </script>
+     <script src = "../JS/cart.js"> </script>
+     
      
      
 </body>

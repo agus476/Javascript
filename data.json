@@ -1,78 +1,78 @@
 [{
     "id": 101,
-    "name": "Grande",
+    "name": "Huevos grande",
     "price": 4500,
     "stock": 50,
-    "color": "Colorado",
+    "color": "color",
     "description": ["Caja de 15 estuches(12 huevos por estuche) - 180 unidades"],
-    "imagen": "../"
+    "imagen": "../assets/egg-big.jpg"
     
     
 },
 {
     "id": 102,
-    "name": "Mediano",
+    "name": "Huevos mediano",
     "price": 4100,
     "stock": 25,
-    "color": "Colorado",
+    "color": "color",
     "description": ["Caja de 6 bandejas(30 huevos por bandeja) - 180 unidades"],
-    "imagen": "../"
+    "imagen": "../assets/egg-med.jpg"
 },
 {
     "id": 103,
-    "name": "Chico",
+    "name": "Huevos chico",
     "price": 3700,
     "stock": 30,
-    "color": "Colorado",
-    "description": ["Caja de 6 badejas(30 huevos por bandeja) - 180 unidades"],
-    "imagen": "../"
+    "color": "color",
+    "description": ["Caja de 6 bandejas(30 huevos por bandeja) - 180 unidades"],
+    "imagen": "../assets/egg-sml.jpg"
 },
 {
     "id": 104,
-    "name": "Bolita",
+    "name": "Huevos bolita",
     "price": 3200,
     "stock": 35,
-    "color": "Colorado",
-    "description": ["Caja de 4 pack (20 unidades) - 80 unidades"],
-    "imagen": "../"
+    "color": "color",
+    "description": ["Caja de 5 pack (30 unidades) - 150 unidades"],
+    "imagen": "../assets/egg-tny.jpg"
 },
 
 {
     "id": 105,
-    "name": "Grande",
+    "name": "Huevos grande",
     "price": 4500,
     "stock": 50,
-    "color": "Blanco",
+    "color": "blanco",
     "description": ["Caja de 15 estuches(12 huevos por estuche) - 180 unidades"],
-    "imagen": "../"
+    "imagen": "../assets/egg-bigW.jpg"
     
     
 },
 {
     "id": 106,
-    "name": "Mediano",
+    "name": "Huevos mediano",
     "price": 4100,
     "stock": 25,
-    "color": "Blanco",
+    "color": "blanco",
     "description": ["Caja de 6 bandejas(30 huevos por bandeja) - 180 unidades"],
-    "imagen": "../"
+    "imagen": "../assets/egg-medW.jpg"
 },
 {
     "id": 107,
-    "name": "Chico",
+    "name": "Huevos chico",
     "price": 3700,
     "stock": 30,
-    "color": "Blanco",
+    "color": "blanco",
     "description": ["Caja de 6 badejas(30 huevos por bandeja) - 180 unidades"],
-    "imagen": "../"
+    "imagen": "../assets/egg-smlW.jpg"
 },
 {
     "id": 108,
-    "name": "Bolita",
+    "name": "Huevos bolita",
     "price": 3200,
     "stock": 35,
-    "color": "Blanco",
-    "description": ["Caja de 4 pack (20 unidades) - 80 unidades"],
-    "imagen": "../"
+    "color": "blanco",
+    "description": ["Caja de 5 pack (30 unidades) - 150 unidades"],
+    "imagen": "../assets/egg-tnyW.jpg"
 }
 ]

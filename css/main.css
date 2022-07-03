@@ -1,10 +1,14 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url("../assets/Roboto-Regular.ttf") format("truetype");
+  font-family: 'BarlowSB';
+  src: url("../assets/Barlow-SemiBoldItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-family: 'IntoScript';
-  src: url("../assets/ClickerScript-Regular.ttf") format("truetype");
+  src: url("../assets/Barlow-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-family: 'Inter';
+  src: url("../assets/Inter-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
@@ -14,7 +18,6 @@
   box-sizing: border-box; }
 
 a {
-  font-family: "Roboto";
   color: black;
   text-decoration: none;
   font-size: 1.3rem; }
@@ -32,6 +35,7 @@ a {
     width: 9.5rem;
     border-radius: 50%; }
   .header__nav {
+    font-family: "Inter";
     height: 2rem;
     width: 70vh; }
   .header__list {
@@ -85,41 +89,124 @@ a {
 
 .eggClass {
   width: 100%;
-  height: auto;
+  height: 100rem;
   display: grid;
-  grid-template-columns: 15rem 15rem 15rem 15rem;
-  grid-template-rows: 15rem 15rem;
+  grid-template-columns: 19rem 19rem 19rem 19rem;
+  grid-template-rows: 30rem;
   background-color: #EAF2E3;
   justify-content: center;
   grid-column-gap: 2rem;
   grid-row-gap: 5rem;
   padding: 4rem; }
-  .eggClass .RedChild {
-    background-color: red;
+  .eggClass .EggChild {
+    float: left;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 20px;
-    border: 0.2rem outset #66D7D1;
     font-family: 'HevelticaRoman';
+    padding: 1rem;
+    margin-right: 20px;
+    position: relative;
+    height: 520px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
     overflow: hidden;
-    padding: 1rem; }
-  .eggClass .whiteChild {
-    background-color: blue;
+    background: #fff; }
+  .eggClass .img {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 10px; }
+  .eggClass .product {
+    font-family: "Inter"; }
+
+.egg-Add {
+  float: left;
+  width: 100%;
+  max-height: calc(100vh - 287px);
+  overflow: auto; }
+
+.line {
+  display: flex;
+  flex-direction: row;
+  float: left;
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #e6e6e6; }
+  .line .price {
+    position: relative;
+    color: #81c301;
+    float: left;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 500;
+    height: 46px;
+    margin: 10px;
+    top: 70px; }
+  .line .name {
+    width: 500px;
+    font-family: "Inter";
+    font-weight: bold; }
+  .line .description {
+    display: flex;
+    align-items: center;
+    width: 500px; }
+  .line .quant {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    border-radius: 20px;
-    border: 0.2rem outset #66D7D1;
-    font-family: 'HevelticaRoman';
-    overflow: hidden;
-    padding: 1rem; }
+    margin: 2px;
+    border: 2px red;
+    height: 180px;
+    width: 50px;
+    box-shadow: 0 0 15px 0 #e4e4e4; }
+    .line .quant .cart-min {
+      text-decoration: none;
+      font-size: 25px;
+      width: 50px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      color: black;
+      border-color: transparent;
+      transition: all .4s ease-in-out;
+      cursor: pointer; }
+    .line .quant .cart-max {
+      text-decoration: none;
+      font-size: 25px;
+      width: 50px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      color: black;
+      border-color: transparent;
+      transition: all .4s ease-in-out;
+      cursor: pointer; }
+
+.imgInChart {
+  float: left;
+  width: 25%;
+  position: relative;
+  padding: 10px; }
+
+.description {
+  padding: 1rem;
+  font-family: "Inter"; }
+
+.price {
+  color: #81c301;
+  float: left;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  height: 46px;
+  margin: 10px; }
 
 .size {
   position: relative;
-  left: -45px;
+  left: -100px;
   bottom: 0px; }
 
 .eggClass .size i {
@@ -156,29 +243,41 @@ a {
   height: 50px; }
 
 .btn-addCart {
-  width: 130px;
-  height: 40px;
+  float: left;
+  width: 100%;
+  background: #94c120;
+  text-align: center;
   color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  background: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 48px;
+  border-radius: 4px;
+  border: 0;
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5), 7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  outline: none; }
+  transition: .3s all ease;
+  -webkit-transition: .3s all ease; }
 
-.btn-1 {
-  background: #060e83;
-  background: linear-gradient(0deg, #060e83 0%, #0c19b4 100%);
-  border: none; }
+.btn-addCart:hover {
+  background: #87ab2a; }
 
-.btn-1:hover {
-  background: #0003ff;
-  background: linear-gradient(0deg, #0003ff 0%, #027efb 100%); }
+.cart-seccion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: auto; }
+  .cart-seccion .buyFoot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 90px;
+    background-color: transparent; }
+    .cart-seccion .buyFoot .name {
+      width: 100%;
+      font-family: "Inter";
+      font-weight: 900; }
 
 .button {
   display: flex;
@@ -220,13 +319,14 @@ a {
   background-color: #f8f8f8;
   box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
-  font-family: "Roboto";
+  font-family: "BarlowSB";
   padding: 20px;
   text-align: center;
   width: 800px;
   opacity: 0;
   transition: .3s ease all;
-  scale: 0.7; }
+  overflow: auto;
+  max-height: 900px; }
 
 .popup .btn-cerrar-popup {
   font-size: 16px;
@@ -243,10 +343,19 @@ a {
   opacity: 1;
   transform: scale(1); }
 
-.cart-seccion {
-  width: 100%;
-  height: 100px;
-  background-color: salmon; }
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5; }
 
-.debug {
-  background-color: green; }
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #CCCCCC; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #66D7D1; }
+
+h3 {
+  margin-bottom: 5px;
+  border-bottom: 2px solid #66D7D1;
+  font-family: "Inter"; }
