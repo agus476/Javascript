@@ -22,20 +22,28 @@ class Helper {
     }
 
 
-    static paintEggs(eggname){
+    static paintEggs(){
 
-        if (eggname == "Huevos grande"){let eggPaint = document.getElementById('12')
-        eggPaint.classList.add("eggColor")}
-
-       else if (eggname == "Huevos mediano") { let eggPaint = document.getElementById('15')
-        eggPaint.classList.add("eggColor")}
-
-       else if (eggname == "Huevos chico") {let eggPaint = document.getElementById('25')
-        eggPaint.classList.add("eggColor")
-       }
-
-       else if (eggname == "Huevos bolita") { let eggPaint = document.getElementById('21')
-       eggPaint.classList.add("eggColor")}
+       
+        let eggPaintG = document.getElementById('9')
+        let eggPaintGH = document.getElementById('13')
+        eggPaintG.classList.add("eggColor")
+        eggPaintGH.classList.add("eggColor")
+        let eggPaintM = document.getElementById('18')
+        let eggPaintMH = document.getElementById('22')
+        eggPaintM.classList.add("eggColor")
+        eggPaintMH.classList.add("eggColor")
+        let eggPaintC = document.getElementById('27')
+        let eggPaintCH = document.getElementById('31')
+        eggPaintC.classList.add("eggColor")
+        eggPaintCH.classList.add("eggColor")
+        let eggPaintB = document.getElementById('36')
+        let eggPaintBH = document.getElementById('40')
+        eggPaintB.classList.add("eggColor")
+        eggPaintBH.classList.add("eggColor")
+        
+    
+    }
 
 
 
@@ -47,7 +55,7 @@ class Helper {
 
 
 
-   }
+   
 
 
 class Cart {
@@ -138,6 +146,7 @@ class Interfaces{
         let contendorEgg = document.querySelector('.eggClass')
         contendorEgg.innerHTML =''
         const EggsDB = await Helper.giveProducts()
+        
         let counter = 0
         let badge = "$"
         EggsDB.forEach(egg => {
@@ -167,13 +176,18 @@ class Interfaces{
                              </div>`
         
           
-           //Helper.paintEggs(egg.name)
-
-
            
+            
+
+          
+                             
+        
+        } 
         
         
-        } ) 
+        ) 
+
+        Helper.paintEggs()
         }
 
 
